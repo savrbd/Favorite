@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./layouts/login";
+import fon from "./image/fon.png";
+import { Route, Routes } from "react-router-dom";
+import Exit from "./layouts/exit";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    const fonStyle = {
+        backgroundImage: `url(${fon})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh"
+    };
+    return (
+        <div
+            className="d-flex align-items-center justify-content-center"
+            style={fonStyle}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/exit" element={<Exit />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
