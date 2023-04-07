@@ -18,8 +18,8 @@ function App() {
             style={fonStyle}
         >
             <Routes>
-                <Route path="/" element={<Login />} />
                 <Route path="/exit" element={<Exit />} />
+                <Route path="/" element={<Login />} />
             </Routes>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from "./textField";
+import Modal from "./modal";
 
 const RecoveryForm = ({ toggleFormType, maskPhone, data, handleChange }) => {
     return (
@@ -18,13 +19,15 @@ const RecoveryForm = ({ toggleFormType, maskPhone, data, handleChange }) => {
             >
                 <h6 className="text-warning">назад</h6>
             </div>
-            <p>временный пароль 123456</p>
             <button
-                type="submit"
+                type="button"
                 className="btn btn-warning w-100 mx-auto text-white"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
             >
-                Позвонить
+                Восстановить пароль
             </button>
+            <Modal toggleFormType={toggleFormType} />
         </div>
     );
 };
